@@ -1,0 +1,61 @@
+<!DOCTYPE html[
+    <!ELEMENT html (head,body) >
+     <!-- Pongo titulo como opcional puesto que no es extrictamente necesario -->
+        <!ELEMENT head (title?) >
+            <!ELEMENT title (#PCDATA) >
+        <!ELEMENT body (h1 | h2 | h3 | h4 | img | a | p | ul | ol | strong | br | hr)* >
+            <!ELEMENT p (#PCDATA | h1 | h2 | h3 | h4 | a | img | ul | ol | strong | br )* >
+             <!-- Los h1 solo puede llevar texto porque no tendria sentido meterlo dentro de otra etiqueta -->
+            <!ELEMENT h1 (#PCDATA) >
+            <!ELEMENT h2 (#PCDATA) >
+            <!ELEMENT h3 (#PCDATA) >
+            <!ELEMENT h4 (#PCDATA) >
+            <!ELEMENT img EMPTY >
+            <!-- Añado atributo en img ya que es necesario -->
+                <!ATTLIST img src CDATA #REQUIRED>
+            <!ELEMENT a (#PCDATA | h1 | h2 | h3 | h4 | img | p | strong)* >
+            <!-- Añado atributo en a ya que es necesario -->
+                <!ATTLIST a href CDATA #REQUIRED>
+            <!ELEMENT ul (li+) >
+            <!ELEMENT ol (li+) >
+                <!ELEMENT li (#PCDATA | h1 | h2 | h3 | h4 | img | a | ul | ol | br | strong)* >
+            <!ELEMENT strong (#PCDATA) >
+            <!ELEMENT br EMPTY >
+            <!ELEMENT hr EMPTY >
+]>
+
+
+
+<html>
+  <head>
+    <title>Netflix</title>
+  </head>
+  <body>
+    <h1>Peliculas y series </h1>
+    <br/>
+    <p>
+        <img src="www.ejemplourl.com/imagen.png"/>
+        Las mejores peliculas y series están solo en <a href="www.netflix.com">Netflix</a>  
+    </p>
+    
+    <h2>Peliculas</h2>
+    <br/>
+    <ul>
+        <li>Titanic</li>
+        <li>Men in Black</li>
+        <li>La vida es bella</li>
+        <li>Mar adentro</li>
+    </ul>
+    
+    <hr/>
+    
+    <h2>Series</h2>
+    <br/>
+    <ol>
+        <li>Aqui no hay quien viva</li>
+        <li>Friends</li>
+        <li>Black mirror</li>
+        <li>Perdidos</li>
+    </ol>
+  </body>
+</html>
